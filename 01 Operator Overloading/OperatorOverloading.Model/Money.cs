@@ -8,6 +8,33 @@ namespace OperatorOverloading.Model
 {
     public class Money
     {
-        // your code goes here
+        public double Amount { get; set; }
+        public string Currency { get; set; }
+
+        //The operator 
+        public static Money operator+(Money money1,Money money2)
+        {
+            Money money3 = new Money();
+         
+            if (money1.Currency.Equals(money2.Currency))
+            {
+                if (money1.Amount < 0 || money2.Amount < 0)
+                {
+                    throw new System.ArgumentException("The value of Arguments passed is not valid");
+                }
+                else
+                {
+                    money3.Amount = money1.Amount + money2.Amount;
+                    money3.Currency = money1.Currency;
+                    if (money3.Amount > double.MaxValue  || money3.Amount < 0)
+                        throw new System.ArgumentException("The value of Arguments passed is not valid");
+                    return money3;
+                }
+            }
+            else
+            {
+               throw new System.Exception("Currency Types do not match");
+            }
+        }
     }
 }
