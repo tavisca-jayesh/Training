@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Operator Overloading", "01 Operator Overloading", "{EB65A3E2-ED6A-4450-BB7F-954F13D6778B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Training.OperatorOverloading", "01 Operator Overloading\Training.OperatorOverloading.csproj", "{BE5C054E-3C14-46F7-B504-5A861149E535}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Webserver", "Webserver", "{978F1D0F-8032-43C2-91CA-E0FF250A4E2B}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Webserver.Dispather", "Webserver.Dispather\Webserver.Dispather.vbproj", "{62411B4F-42CC-4099-A8C5-6F7C279FCD42}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Webserver.Listner", "Webserver.Listner\Webserver.Listner.vbproj", "{9F19229C-22A2-46E2-8CD3-61D90DB3F047}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE5C054E-3C14-46F7-B504-5A861149E535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE5C054E-3C14-46F7-B504-5A861149E535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE5C054E-3C14-46F7-B504-5A861149E535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE5C054E-3C14-46F7-B504-5A861149E535}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62411B4F-42CC-4099-A8C5-6F7C279FCD42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62411B4F-42CC-4099-A8C5-6F7C279FCD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62411B4F-42CC-4099-A8C5-6F7C279FCD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62411B4F-42CC-4099-A8C5-6F7C279FCD42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F19229C-22A2-46E2-8CD3-61D90DB3F047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F19229C-22A2-46E2-8CD3-61D90DB3F047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F19229C-22A2-46E2-8CD3-61D90DB3F047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F19229C-22A2-46E2-8CD3-61D90DB3F047}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BE5C054E-3C14-46F7-B504-5A861149E535} = {EB65A3E2-ED6A-4450-BB7F-954F13D6778B}
+		{62411B4F-42CC-4099-A8C5-6F7C279FCD42} = {978F1D0F-8032-43C2-91CA-E0FF250A4E2B}
+		{9F19229C-22A2-46E2-8CD3-61D90DB3F047} = {978F1D0F-8032-43C2-91CA-E0FF250A4E2B}
+	EndGlobalSection
+EndGlobal
