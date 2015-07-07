@@ -8,5 +8,6 @@ namespace OperatorOverloading.Model
 {
     public class Money
     {
+        // your code goes here
     }
 }
