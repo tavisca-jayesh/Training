@@ -11,32 +11,35 @@ namespace OperatorOverloading.Host
     {
         static void Main(string[] args)
         {
-            
-            Money money1 = new Money();
-            Money money2 = new Money();
-            Money money3 = new Money();
-           
-            // Input Salary
-            Console.WriteLine("Enter a valid Curreny type ex: USD,INR");
-            money1.Currency = Console.ReadLine();
-            Console.WriteLine("Enter a valid Amount ex: 100");
-            money1.Amount = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Enter a valid Curreny type ex: USD,INR");
-            money2.Currency = Console.ReadLine();
-            Console.WriteLine("Enter a valid Amount ex: 100");
-            money2.Amount = Convert.ToDouble(Console.ReadLine());
-
-            money1.Amount = double.MaxValue;
+            double amountVar;
+            string currencyVar;
             try
             {
+                // Input
+                Console.WriteLine("Enter a valid Curreny type ex: USD,INR");
+                currencyVar = Console.ReadLine();
+                Console.WriteLine("Enter a valid Amount ex: 100");
+                double.TryParse(Console.ReadLine(), out amountVar);
+
+                //calling constructor
+                Money money1 = new Money(amountVar, currencyVar);
+
+                // Input
+                Console.WriteLine("Enter a valid Curreny type ex: USD,INR");
+                currencyVar = Console.ReadLine();
+                Console.WriteLine("Enter a valid Amount ex: 100");
+                double.TryParse(Console.ReadLine(), out amountVar);
+
+                //calling constructor
+                Money money2 = new Money(amountVar, currencyVar);
+
                 //this statement can throw exception
-                money3 = money1 + money2;
+                Money money3 = money1 + money2;
                 Console.WriteLine("The Currency and Amount is : {0}  {1}", money3.Currency, money3.Amount);
             }
             catch (Exception e)
             {
-                //Handle the exception in thois section
+                //Handle the exception in this section
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.StackTrace);
             }

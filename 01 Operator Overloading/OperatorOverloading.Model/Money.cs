@@ -8,32 +8,76 @@ namespace OperatorOverloading.Model
 {
     public class Money
     {
-        public double Amount { get; set; }
-        public string Currency { get; set; }
-
-        //The operator 
-        public static Money operator+(Money money1,Money money2)
+        //constructor
+        public Money(double amount, string currency)
         {
-         
-            if (!string.IsNullOrEmpty(money1.Currency) && !string.IsNullOrEmpty(money2.Currency) && string.Equals(money1.Currency.ToUpper(),money2.Currency.ToUpper()))
+            this.Amount = amount;
+            this.Currency = currency;
+        }
+
+        private double _amount;
+        public double Amount
+        {
+            get
             {
-                if (money1.Amount < 0 || money2.Amount < 0 || money1.Amount >= double.MaxValue || money2.Amount >= double.MaxValue)
+                return _amount;
+            }
+            set
+            {
+                if (value < 0 || value == double.MaxValue)
                 {
-                    throw new System.ArgumentException("The value of Amount passed is not valid");
+                    throw new System.ArgumentException(messages.amountInvalid);
                 }
                 else
                 {
-                    Money money3 = new Money();
-                    money3.Amount = money1.Amount + money2.Amount;
-                    if (money3.Amount > double.MaxValue  || money3.Amount < 0)
-                      throw new System.ArgumentException("The value of Arguments passed is not valid");
-                    money3.Currency = money1.Currency.ToUpper();
-                    return money3;
+                    _amount = value;
                 }
+            }
+        }
+
+        private string _currency;
+        public string Currency
+        {
+            get
+            {
+                return _currency;
+            }
+            private set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new System.ArgumentException(messages.currencyEmpty);
+                }
+                else
+                {
+                    _currency = value.ToUpper();
+                }
+            }
+        }
+
+        //constructor
+        public Money()
+        {
+            Amount = 0;
+            Currency = null;
+        }
+
+        //operator overloading
+        public static Money operator +(Money money1, Money money2)
+        {
+            if (string.Equals(money1.Currency, money2.Currency))
+            {
+                double newAmount;
+                newAmount = money1.Amount + money2.Amount;
+                if (double.IsPositiveInfinity(newAmount))
+                    throw new System.ArgumentException(messages.amountOverflow);
+                //money3.Currency = money1.Currency;
+                //return money3;
+                return new Money(newAmount, money1.Currency);
             }
             else
             {
-                throw new System.ArgumentException("The currency types do not match");
+                throw new System.ArgumentException(messages.currencyMismatch);
             }
         }
     }
