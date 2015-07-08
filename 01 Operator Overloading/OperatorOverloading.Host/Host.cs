@@ -11,31 +11,28 @@ namespace OperatorOverloading.Host
     {
         static void Main(string[] args)
         {
-            double amountVar;
-            string currencyVar;
+            string inputString;
+            
             try
             {
                 // Input
-                Console.WriteLine("Enter a valid Curreny type ex: USD,INR");
-                currencyVar = Console.ReadLine();
-                Console.WriteLine("Enter a valid Amount ex: 100");
-                double.TryParse(Console.ReadLine(), out amountVar);
-
+                Console.WriteLine(Messages2.InputMessage);
+                inputString = Console.ReadLine();
+               // Console.WriteLine("Enter a valid Amount ex: 100");
+                
                 //calling constructor
-                Money money1 = new Money(amountVar, currencyVar);
+                Money money1 = new Money(inputString);
 
                 // Input
-                Console.WriteLine("Enter a valid Curreny type ex: USD,INR");
-                currencyVar = Console.ReadLine();
-                Console.WriteLine("Enter a valid Amount ex: 100");
-                double.TryParse(Console.ReadLine(), out amountVar);
-
+                Console.WriteLine(,Messages2.InputMessage);
+                inputString = Console.ReadLine();
+                
                 //calling constructor
-                Money money2 = new Money(amountVar, currencyVar);
+                Money money2 = new Money(inputString);
 
                 //this statement can throw exception
                 Money money3 = money1 + money2;
-                Console.WriteLine("The Currency and Amount is : {0}  {1}", money3.Currency, money3.Amount);
+                Console.WriteLine("The Amount and Currency is : {1}  {0}", money3.Currency, money3.Amount);
             }
             catch (Exception e)
             {

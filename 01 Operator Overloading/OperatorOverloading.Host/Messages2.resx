@@ -118,18 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AmountInvalid" xml:space="preserve">
-    <value>The value of Amount passed is Invalid</value>
-  </data>
-  <data name="AmountOverflow" xml:space="preserve">
-    <value>The value of Arguments passed lead to value beyond range</value>
-  </data>
-  <data name="ArgumentNull" xml:space="preserve">
-    <value>A null argument was passed</value>
+    <value>The value of Amount not passed</value>
   </data>
   <data name="CurrencyEmpty" xml:space="preserve">
     <value>The value of currency is Empty</value>
   </data>
   <data name="CurrencyMismatch" xml:space="preserve">
     <value>The currency types do not match</value>
+  </data>
+  <data name="InputMessage" xml:space="preserve">
+    <value>Enter a valid Curreny type and amount in the following format \n ex: 100 USD, 100 INRS</value>
   </data>
 </root>
