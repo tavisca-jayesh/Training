@@ -7,10 +7,6 @@ namespace OperatorOverloading.Model
         //Double Parameter constructor
         public Money(double amount, string currency)
         {
-            if (amount == null || string.IsNullOrWhiteSpace(currency))
-            {
-                throw new System.ArgumentException(Messages.ArgumentNull);
-            }
             this.Amount = amount;
             this.Currency = currency;
         }
@@ -24,7 +20,7 @@ namespace OperatorOverloading.Model
             }
 
             var inputarr = input.Split(' ');
-            if ((inputarr.Length == 2)==false)
+            if (inputarr.Length != 2)
             {
                 throw new System.ArgumentException(Messages.ArgumentNoInvalid);
             }
@@ -72,7 +68,7 @@ namespace OperatorOverloading.Model
             }
             private set
             {
-                if ((value.Length == 3) == false)
+                if (value == null || value.Length != 3)
                 {
                     throw new ArgumentException(Messages.CurrencyInvalid);
                 }
@@ -87,14 +83,11 @@ namespace OperatorOverloading.Model
             {
                 throw new System.ArgumentNullException(Messages.ArgumentNull);
             }
-            if (string.Equals(money1.Currency, money2.Currency, StringComparison.OrdinalIgnoreCase))
-            {
-                return new Money(money1.Amount + money2.Amount, money1.Currency);
-            }
-            else
+            if ((string.Equals(money1.Currency, money2.Currency, StringComparison.OrdinalIgnoreCase))==false)
             {
                 throw new System.ArgumentException(Messages.CurrencyMismatch);
             }
+            return new Money(money1.Amount + money2.Amount, money1.Currency);
         }
     }
 }
