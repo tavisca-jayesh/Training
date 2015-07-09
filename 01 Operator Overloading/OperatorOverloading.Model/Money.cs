@@ -7,6 +7,10 @@ namespace OperatorOverloading.Model
         //Double Parameter constructor
         public Money(double amount, string currency)
         {
+            if (amount == null || string.IsNullOrWhiteSpace(currency))
+            {
+                throw new System.ArgumentException(Messages.ArgumentNull);
+            }
             this.Amount = amount;
             this.Currency = currency;
         }
