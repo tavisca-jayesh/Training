@@ -33,7 +33,7 @@ namespace OperatorOverloading.Model
             }
             this.Amount = amount;
             //setting currency
-            if (string.IsNullOrEmpty(inputarr[1]) == true)
+            if (string.IsNullOrEmpty(inputarr[1]))
             {
                 throw new System.ArgumentException(Messages.CurrencyEmpty);
             }
