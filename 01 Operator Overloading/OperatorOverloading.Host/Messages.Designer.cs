@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OperatorOverloading.Model {
+namespace OperatorOverloading.Host {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace OperatorOverloading.Model {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OperatorOverloading.Model.Messages", typeof(Messages).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OperatorOverloading.Host.Messages", typeof(Messages).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,56 +61,11 @@ namespace OperatorOverloading.Model {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The value of Amount passed is Invalid.
+        ///   Looks up a localized string similar to Enter a valid Curreny type and amount in the following format  ex: 100 USD.
         /// </summary>
-        internal static string AmountInvalid {
+        internal static string InputMessage {
             get {
-                return ResourceManager.GetString("AmountInvalid", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The value of Arguments passed lead to value beyond range.
-        /// </summary>
-        internal static string AmountOverflow {
-            get {
-                return ResourceManager.GetString("AmountOverflow", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to A null argument was passed.
-        /// </summary>
-        internal static string ArgumentNull {
-            get {
-                return ResourceManager.GetString("ArgumentNull", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The value of currency is Empty.
-        /// </summary>
-        internal static string CurrencyEmpty {
-            get {
-                return ResourceManager.GetString("CurrencyEmpty", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The currency types do not match.
-        /// </summary>
-        internal static string CurrencyMismatch {
-            get {
-                return ResourceManager.GetString("CurrencyMismatch", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The input string is Null.
-        /// </summary>
-        internal static string NullInput {
-            get {
-                return ResourceManager.GetString("NullInput", resourceCulture);
+                return ResourceManager.GetString("InputMessage", resourceCulture);
             }
         }
     }

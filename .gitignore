@@ -6,6 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.pdb
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -53,7 +54,6 @@ artifacts/
 *.pgc
 *.pgd
 *.rsp
-*.pdb
 *.sbr
 *.tlb
 *.tli

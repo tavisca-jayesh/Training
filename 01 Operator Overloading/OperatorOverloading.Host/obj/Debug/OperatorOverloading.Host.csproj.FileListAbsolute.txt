@@ -7,4 +7,4 @@ D:\training\01 Operator Overloading\OperatorOverloading.Host\obj\Debug\OperatorO
 D:\training\01 Operator Overloading\OperatorOverloading.Host\bin\Debug\OperatorOverloading.Model.dll
 D:\training\01 Operator Overloading\OperatorOverloading.Host\bin\Debug\OperatorOverloading.Model.pdb
 D:\training\01 Operator Overloading\OperatorOverloading.Host\obj\Debug\OperatorOverloading.Host.csproj.GenerateResource.Cache
-D:\training\01 Operator Overloading\OperatorOverloading.Host\obj\Debug\OperatorOverloading.Host.Messages2.resources
+D:\training\01 Operator Overloading\OperatorOverloading.Host\obj\Debug\OperatorOverloading.Host.Messages.resources

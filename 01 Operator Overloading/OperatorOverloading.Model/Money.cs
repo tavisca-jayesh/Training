@@ -8,26 +8,37 @@ namespace OperatorOverloading.Model
 {
     public class Money
     {
-        //constructor
+        //Double Parameter constructor
         public Money(double amount, string currency)
         {
+            if (double.IsInfinity(amount))
+            {
+                throw new System.ArgumentException(Messages.AmountOverflow);
+            }
             this.Amount = amount;
             this.Currency = currency;
         }
 
+        //Single Parameter Constructor
         public Money(string input)
         {
-            var inputarr = input.Split(' ');
-            double temp;
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                throw new System.ArgumentException(Messages.NullInput);
+            }
 
-            bool checkNull = double.TryParse(inputarr[0], out temp);
+            var inputarr = input.Split(' ');
+            double amount;
+
+            //setting Amount
+            bool checkNull = double.TryParse(inputarr[0], out amount);
             if (checkNull == false)
             {
                 throw new System.ArgumentException(Messages.AmountInvalid);
             }
-            //temp = double.MaxValue*0.75;
-            this.Amount = temp;
+            this.Amount = amount;
 
+            //setting currency
             if (string.IsNullOrWhiteSpace(inputarr[1]) == true)
             {
                 throw new System.ArgumentException(Messages.CurrencyEmpty);
@@ -35,6 +46,7 @@ namespace OperatorOverloading.Model
             this.Currency = inputarr[1];
         }
 
+        //property amount
         private double _amount;
         public double Amount
         {
@@ -52,7 +64,7 @@ namespace OperatorOverloading.Model
             }
         }
 
-
+        //property currency
         private string _currency;
         public string Currency
         {
@@ -62,10 +74,6 @@ namespace OperatorOverloading.Model
             }
             private set
             {
-                if (string.IsNullOrWhiteSpace(value))
-                {
-                    throw new System.ArgumentException(Messages.CurrencyEmpty);
-                }
                 _currency = value;
             }
         }
@@ -79,12 +87,7 @@ namespace OperatorOverloading.Model
             }
             if (string.Equals(money1.Currency, money2.Currency, StringComparison.OrdinalIgnoreCase))
             {
-                double newAmount = money1.Amount + money2.Amount;
-                if (double.IsPositiveInfinity(newAmount))
-                    throw new System.ArgumentException(Messages.AmountOverflow);
-                //money3.Currency = money1.Currency;
-                //return money3;
-                return new Money(newAmount, money1.Currency);
+                return new Money(money1.Amount + money2.Amount, money1.Currency);
             }
             else
             {
