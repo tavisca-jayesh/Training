@@ -79,6 +79,15 @@ namespace OperatorOverloading.Model {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The number of arguments passed is invalid.
+        /// </summary>
+        internal static string ArgumentNoInvalid {
+            get {
+                return ResourceManager.GetString("ArgumentNoInvalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A null argument was passed.
         /// </summary>
         internal static string ArgumentNull {
@@ -93,6 +102,15 @@ namespace OperatorOverloading.Model {
         internal static string CurrencyEmpty {
             get {
                 return ResourceManager.GetString("CurrencyEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The value of currency is invalid.
+        /// </summary>
+        internal static string CurrencyInvalid {
+            get {
+                return ResourceManager.GetString("CurrencyInvalid", resourceCulture);
             }
         }
         

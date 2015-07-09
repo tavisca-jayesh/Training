@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace OperatorOverloading.Model
 {
     public class Money
@@ -8,10 +7,6 @@ namespace OperatorOverloading.Model
         //Double Parameter constructor
         public Money(double amount, string currency)
         {
-            if (double.IsInfinity(amount))
-            {
-                throw new System.ArgumentException(Messages.AmountOverflow);
-            }
             this.Amount = amount;
             this.Currency = currency;
         }
@@ -25,14 +20,13 @@ namespace OperatorOverloading.Model
             }
 
             var inputarr = input.Split(' ');
-            if (inputarr.Length != 2)
+            if ((inputarr.Length == 2)==false)
             {
-                throw new System.ArgumentException(Messages.CurrencyEmpty);
+                throw new System.ArgumentException(Messages.ArgumentNoInvalid);
             }
 
-            double amount;
-
             //setting Amount
+            double amount;
             if (double.TryParse(inputarr[0], out amount) == false)
             {
                 throw new System.ArgumentException(Messages.AmountInvalid);
@@ -56,7 +50,7 @@ namespace OperatorOverloading.Model
             }
             set
             {
-                if (value < 0 || value == double.MaxValue)
+                if (value < 0 || double.IsPositiveInfinity(value) || value == double.MaxValue)
                 {
                     throw new System.ArgumentException(Messages.AmountInvalid);
                 }
@@ -74,6 +68,10 @@ namespace OperatorOverloading.Model
             }
             private set
             {
+                if ((value.Length == 3) == false)
+                {
+                    throw new ArgumentException(Messages.CurrencyInvalid);
+                }
                 _currency = value;
             }
         }
