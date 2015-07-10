@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text.RegularExpressions;
+using OperatorOverloading.DBL;
 
 namespace OperatorOverloading.Model
 {
@@ -88,6 +90,15 @@ namespace OperatorOverloading.Model
                 throw new System.ArgumentException(Messages.CurrencyMismatch);
             }
             return new Money(money1.Amount + money2.Amount, money1.Currency);
+        }
+
+        public Money Convert(string convertTo)
+        {
+            if(string.IsNullOrWhiteSpace(convertTo) || convertTo.Length != 3 || Regex.IsMatch(convertTo, @"^[a-zA-Z]+$")==false)
+                throw new SystemException(Messages.CurrencyInvalid);
+            CurrencyConverter converter = new CurrencyConverter();
+            //double rate = converter.GetConversionRate(this.Currency, convertTo);
+            return new Money(this.Amount * converter.GetConversionRate(this.Currency, convertTo), convertTo);
         }
     }
 }
