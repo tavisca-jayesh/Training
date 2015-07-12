@@ -97,7 +97,6 @@ namespace OperatorOverloading.Model
             if(string.IsNullOrWhiteSpace(convertTo) || convertTo.Length != 3 || Regex.IsMatch(convertTo, @"^[a-zA-Z]+$")==false)
                 throw new SystemException(Messages.CurrencyInvalid);
             CurrencyConverter converter = new CurrencyConverter();
-            //double rate = converter.GetConversionRate(this.Currency, convertTo);
             return new Money(this.Amount * converter.GetConversionRate(this.Currency, convertTo), convertTo);
         }
     }

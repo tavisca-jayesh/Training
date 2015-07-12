@@ -4,19 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Configuration;
 
 namespace OperatorOverloading.DBL
 {
     class APIFetchFile
     {
-        public static string getJSON()
+        public static string GetJSON()
         {
-            string path = "C:/Users/jyeola/Desktop/conversion_rates.txt";
-            if(File.Exists(path)==false)
+            string filePath = ConfigurationManager.AppSettings["Path"];
+            if (File.Exists(filePath) == false)
             {
                 throw new SystemException("File not found exception");
             }
-            return System.IO.File.ReadAllText(path);
+            return System.IO.File.ReadAllText(filePath);
         }
     }
 }

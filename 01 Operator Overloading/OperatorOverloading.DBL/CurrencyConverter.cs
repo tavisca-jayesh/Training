@@ -10,34 +10,24 @@ namespace OperatorOverloading.DBL
     {
         public double GetConversionRate(string source, string target)
         {
-            if (this == null)
-            {
-                throw new NullReferenceException();
-            }
             if (string.IsNullOrWhiteSpace(source) || string.IsNullOrWhiteSpace(target) || source.Length != 3 || target.Length != 3)
             {
                 throw new System.Exception(Messages.CurrencyInvalid);
             }
             //API Fetch
-            string json = APIFetchFile.getJSON();
+            string json = APIFetchFile.GetJSON();
             //JSON Parse
-            string[] conversionStrings = JSONParser.parseJSON(json);
-
-            //Calculate Conversion Rate    
-            foreach (string i in conversionStrings)
+            Dictionary<string, double> conversionFactor = JSONParser.ParseJSON(json);
+            target = target.ToUpper();
+            if (conversionFactor.ContainsKey(target))
             {
-                if (i.Contains(target.ToUpper()))
-                {
-                    string[] convertRate = i.Split(':');
-                    double amount;
-                    if (double.TryParse(convertRate[1], out amount) == false || amount <0 || double.IsPositiveInfinity(amount) || amount == double.MaxValue)
-                        throw new System.Exception(Messages.RateInvalid);
-
-                    return Convert.ToDouble(convertRate[1]);
-                }
+                double amount = conversionFactor[target];
+                return amount;
             }
+
             throw new System.Exception(Messages.CurrencyNotFound);
         }
 
     }
 }
+ 

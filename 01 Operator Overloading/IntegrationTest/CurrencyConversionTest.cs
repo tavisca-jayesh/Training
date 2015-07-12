@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OperatorOverloading.Model;
 using System.IO;
+using System.Configuration;
 
 namespace OperatorOverloading.UnitTesting
 {
@@ -14,15 +15,23 @@ namespace OperatorOverloading.UnitTesting
             var money1 = new Money("100 USD");
             var money2 = money1.Convert("INR");
 
-            Assert.IsTrue(money2.Amount == 6347.345);
+            string filePath = ConfigurationManager.AppSettings["Path"];
+            string json = System.IO.File.ReadAllText(filePath);
+            int indexSource = json.IndexOf("USDINR");
+            int indexStart = json.IndexOf(':', indexSource) + 1;
+            int indexEnd = json.IndexOf(',', indexStart);
+            string value = json.Substring(indexStart, indexEnd - indexStart);
+            double checkValue;
+            double.TryParse(value, out checkValue);
+            Assert.IsTrue(money2.Amount == checkValue * money1.Amount);
         }
 
         [TestMethod]
         [ExpectedException(typeof(System.Exception))]
         public void CurrencyNotFound()
         {
-          var money1 = new Money("100 USD");
-          var money2 = money1.Convert("YEN");
+            var money1 = new Money("100 USD");
+            var money2 = money1.Convert("YEN");
         }
 
         [TestMethod]
@@ -60,12 +69,5 @@ namespace OperatorOverloading.UnitTesting
             var money2 = money1.Convert("INR");
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(NullReferenceException))]
-        public void MoneyObjectNull()
-        {
-            Money money1 = null;
-            var money2 = money1.Convert("INR");
-        }
     }
 }
