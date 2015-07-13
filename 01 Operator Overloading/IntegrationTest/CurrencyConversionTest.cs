@@ -15,6 +15,8 @@ namespace OperatorOverloading.UnitTesting
             var money1 = new Money("100 USD");
             var money2 = money1.Convert("INR");
 
+
+            //MOQ can be used for same purpose
             string filePath = ConfigurationManager.AppSettings["Path"];
             string json = System.IO.File.ReadAllText(filePath);
             int indexSource = json.IndexOf("USDINR");

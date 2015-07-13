@@ -17,7 +17,7 @@ namespace OperatorOverloading.DBL
             //API Fetch
             string json = APIFetchFile.GetJSON();
             //JSON Parse
-            Dictionary<string, double> conversionFactor = JSONParser.ParseJSON(json);
+            Dictionary<string, double> conversionFactor = GetConversionRates.ParseJSON(json);
             target = target.ToUpper();
             if (conversionFactor.ContainsKey(target))
             {

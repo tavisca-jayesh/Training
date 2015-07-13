@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OperatorOverloading.DBL
 {
-    class JSONParser
+    class GetConversionRates
     {
         public static Dictionary<string, double> ParseJSON(string json)
         {
