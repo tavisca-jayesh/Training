@@ -11,12 +11,12 @@ namespace WebServer
 {
     class Dispatcher
     {
-        private Socket _clientSocket = null; // use a queue later on
+        private Socket _clientSocket = null;
         private static HandlerFactory handlerFactory = new HandlerFactory();
         public Dispatcher(Socket clientSocket)
         {
             _clientSocket = clientSocket;
-        }
+         }
         public void HandleClient()
         {
             var requestParse = new RequestParser();

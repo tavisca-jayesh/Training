@@ -29,6 +29,7 @@ namespace WebServer
                 SendResponse(ClientSocket, FileHandler.ReadFile(requestedFile), "200 Okay", GetTypeOfFile(registryKey, (_contentPath + requestedFile)));
             else
                 SendErrorResponce(ClientSocket);
+
         }
 
         public void DoPost()
@@ -55,7 +56,6 @@ namespace WebServer
         {
             byte[] emptyByteArray = new byte[0];
             SendResponse(clientSocket, emptyByteArray, "404 Not Found", "text/html");
-            Console.WriteLine("Error 404! Page not found");
         }
 
 
