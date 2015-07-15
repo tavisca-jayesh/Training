@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Webserver.Listener
+namespace WebServer
 {
-    public class Class1
+    public interface IProcessor
     {
+        void DoGet(string url);
+        void DoPost();
     }
 }
