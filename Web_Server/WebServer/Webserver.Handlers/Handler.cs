@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebServer.Host
+namespace Webserver.Handlers
 {
-    class Program
+    public class Handler
     {
-        static void Main(string[] args)
+        public static void Init()
         {
         }
     }
