@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Webserver.Listener
+namespace Webserver.Handlers
 {
-    public class Class1
+    public class Handler
     {
+        public static void Init()
+        {
+        }
     }
 }
