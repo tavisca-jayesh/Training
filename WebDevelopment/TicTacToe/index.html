@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>X & 0</title>
+    <link href="css/tictactoe.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <h2>This is a tic-tac-toe with 2 player X and O</h2>
+        <div>
+            Player 1 : X
+            <br />
+            Player 2 : O
+            <p>
+                To reset the game :
+                <button type="button" class="ResetButton" onclick="reset();">Play Again</button>
+            </p>
+        </div>
+        <div class="board">
+            <table class="table" id="table">
+                <tr class="rows">
+                    <td class="cells" id="00"></td>
+                    <td class="cells" id="01"></td>
+                    <td class="cells" id="02"></td>
+                </tr>
+                <tr class="rows">
+                    <td class="cells" id="10"></td>
+                    <td class="cells" id="11"></td>
+                    <td class="cells" id="12"></td>
+
+                </tr>
+                <tr class="rows">
+                    <td class="cells" id="20"></td>
+                    <td class="cells" id="21"></td>
+                    <td class="cells" id="22"></td>
+                </tr>
+                <tr><th id="displayResult" colspan="3"></th></tr>
+            </table>
+        </div>
+    </div>
+    <script src="scripts/XandO.js"></script>
+</body>
+</html>
