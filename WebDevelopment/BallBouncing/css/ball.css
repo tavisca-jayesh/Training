@@ -1,0 +1,13 @@
+﻿body {
+background-color:#808080;
+}
+
+.circle {
+    background:#b61010;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
