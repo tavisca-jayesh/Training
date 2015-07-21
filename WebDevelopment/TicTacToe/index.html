@@ -3,8 +3,9 @@
 <head>
     <title>X & 0</title>
     <link href="css/tictactoe.css" rel="stylesheet" />
+    <script src="scripts/XandO.js"></script>
 </head>
-<body>
+<body onload="reset();">
     <div>
         <h2>This is a tic-tac-toe with 2 player X and O</h2>
         <div>
@@ -34,10 +35,11 @@
                     <td class="cells" id="21"></td>
                     <td class="cells" id="22"></td>
                 </tr>
-                <tr><th id="displayResult" colspan="3"></th></tr>
+                <tr>
+                    <th id="displayResult" colspan="3"></th>
+                </tr>
             </table>
         </div>
     </div>
-    <script src="scripts/XandO.js"></script>
 </body>
 </html>
