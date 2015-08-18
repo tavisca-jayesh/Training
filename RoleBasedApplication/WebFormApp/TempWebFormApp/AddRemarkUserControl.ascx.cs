@@ -7,36 +7,56 @@ using System.Runtime.Serialization.Json;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using TempWebFormApp.Models;
+using EmployeeRemarkApp.Model;
 
-namespace TempWebFormApp
+namespace EmployeeRemarkApp.UI
 {
     public partial class AddRemarkUserControl : System.Web.UI.UserControl
     {
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Request.Cookies["UserName"] == null || Request.Cookies["Password"] == null)
+                {
+                    Response.Redirect("~/LoginPage.aspx");
+                }
+                EmployeeListResponse allEmployees = new EmployeeListResponse();
 
+                Dictionary<string, string> employeeDictionary = new Dictionary<string, string>();
+                allEmployees = allEmployees.GetAllEmployees();
+                foreach (Employee employee in allEmployees.ResponseEmployeeList)
+                {
+                    employeeDictionary.Add(employee.Id.ToString(), employee.FirstName + "  " + employee.LastName);
+                }
+                EmployeeList.DataTextField = "Value";
+                EmployeeList.DataValueField = "Key";
+                EmployeeList.DataSource = employeeDictionary;
+                EmployeeList.DataBind();
+            }
         }
 
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        protected void AddRemarkButton_Click(object sender, ImageClickEventArgs e)
         {
             HRHome EmpView = new HRHome();
             Remark remark = new Remark();
             remark.Text = RemarkText.Value;
             remark.CreateTimeStamp = DateTime.UtcNow;
-            var employeeId = EmployeeIdText.Text;
 
-            MemoryStream stream1 = new MemoryStream();
-            DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(Remark));
-            ser.WriteObject(stream1, remark);
-            stream1.Position = 0;
-            StreamReader sr = new StreamReader(stream1);
-            string d = sr.ReadToEnd();
-            var client = new WebClient();
-            client.Headers.Add("Content-Type", "application/json");
-            var response = client.UploadString("http://localhost:53412/EmployeeManagementService.svc/employee/" + employeeId + "/remark", "POST", d);
+            RemarkResponse add = new RemarkResponse();
+            var response = add.AddRemark(remark, EmployeeList.SelectedValue.ToString());
+            RemarkText.InnerText = null;
+            RemarkText.InnerHtml = null;
+            EmployeeList.SelectedIndex = -1;
+
             EmpView.EmployeeView(sender, e);
+
+        }
+
+        protected void EmployeeList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

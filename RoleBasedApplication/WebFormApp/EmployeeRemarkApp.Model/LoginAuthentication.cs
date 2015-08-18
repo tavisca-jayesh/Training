@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
 
-namespace TempWebFormApp.Models
+namespace EmployeeRemarkApp.Model
 {
     [DataContract]
     public class LoginAuthetication

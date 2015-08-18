@@ -5,12 +5,12 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TempWebFormApp.Models
+namespace EmployeeRemarkApp.Model
 {
     [DataContract]
     public class Employee
     {
-        internal Employee()
+        public Employee()
         {
             DOJ = DateTime.UtcNow;
         }
@@ -35,5 +35,6 @@ namespace TempWebFormApp.Models
         public string Password { get; set; }
         [DataMember]
         public List<Remark> Remarks { get; set; }
+
     }
 }

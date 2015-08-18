@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace TempWebFormApp.Account
+namespace EmployeeRemarkApp.UI.Account
 {
     public partial class Login : Page
     {

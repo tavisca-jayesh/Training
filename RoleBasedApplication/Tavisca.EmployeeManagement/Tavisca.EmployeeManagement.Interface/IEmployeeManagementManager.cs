@@ -13,6 +13,6 @@ namespace Tavisca.EmployeeManagement.Interface
 
         Remark AddRemark(string employeeId, Remark remark);
 
-        Employee Authenticate(LoginAuthentication employeeDetails);
+        //Employee Authenticate(LoginAuthentication employeeDetails);
     }
 }

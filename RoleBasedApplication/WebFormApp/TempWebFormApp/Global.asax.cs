@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Routing;
 using System.Web.Security;
-using TempWebFormApp;
+using EmployeeRemarkApp.UI;
 
-namespace TempWebFormApp
+namespace EmployeeRemarkApp.UI
 {
     public class Global : HttpApplication
     {

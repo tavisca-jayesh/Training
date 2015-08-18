@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="HRHome.aspx.cs" Inherits="TempWebFormApp.HRHome" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="HRHome.aspx.cs" Inherits="EmployeeRemarkApp.UI.HRHome" %>
 
 <%@ Register Src="~/AddEmployeeUserControl.ascx" TagPrefix="uc2" TagName="AddEmployeeUserControl" %>
 <%@ Register Src="~/AddRemarkUserControl.ascx" TagPrefix="uc3" TagName="AddRemarkUserControl" %>
@@ -6,18 +6,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FeaturedContent" runat="server">
+    <asp:Button ID="LogOut" runat="server" Text="LogOut" OnClick="LogOut_Click" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <!------------------------------------------------------------------------------------>
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
 
-        <Triggers>
+        <%--<Triggers>
 
             <asp:AsyncPostBackTrigger ControlID="linkButton1" EventName="Click" />
 
             <asp:AsyncPostBackTrigger ControlID="linkButton2" EventName="Click" />
 
-        </Triggers>
+        </Triggers>--%>
 
         <ContentTemplate>
             <asp:Panel ID="pnlWishList" DefaultButton="lnkWishList" runat="server">
@@ -45,7 +46,7 @@
                             <asp:Button ID="Employee" runat="server" Text="Add Remark" OnClick="RemarkView" />
                             <asp:Button ID="Remark1" runat="server" Text="Add Employee" BackColor="#0000ff"/>
                             <br />
-                            <asp:LinkButton ID="linkButton1" runat="server" Text="LinkButton1" />
+                            <%--<asp:LinkButton ID="linkButton1" runat="server" Text="LinkButton1" />--%>
                             <uc2:AddEmployeeUserControl runat="server" ID="AddEmployeeUserControl1" Visible="true" />
                             <%--</div>--%>
                         </asp:View>
@@ -58,7 +59,7 @@
                             <br />
                             <%--<div id="Div2">--%>
                             <%--class="tab-pane fade"--%>
-                            <asp:LinkButton ID="linkButton2" runat="server" Text="LinkButton2" />
+                            <%--<asp:LinkButton ID="linkButton2" runat="server" Text="LinkButton2" />--%>
                             <uc3:AddRemarkUserControl runat="server" ID="AddRemarkUserControl1" Visible="true" />
                             <%--</div>--%>
                         </asp:View>

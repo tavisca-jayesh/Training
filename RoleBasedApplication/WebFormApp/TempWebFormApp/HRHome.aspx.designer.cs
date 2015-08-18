@@ -7,10 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TempWebFormApp {
+namespace EmployeeRemarkApp.UI {
     
     
     public partial class HRHome {
+        
+        /// <summary>
+        /// LogOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button LogOut;
         
         /// <summary>
         /// UpdatePanel1 control.
@@ -85,22 +94,13 @@ namespace TempWebFormApp {
         protected global::System.Web.UI.WebControls.Button Remark1;
         
         /// <summary>
-        /// linkButton1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton linkButton1;
-        
-        /// <summary>
         /// AddEmployeeUserControl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TempWebFormApp.AddEmployeeUserControl AddEmployeeUserControl1;
+        protected global::EmployeeRemarkApp.UI.AddEmployeeUserControl AddEmployeeUserControl1;
         
         /// <summary>
         /// View2 control.
@@ -130,21 +130,12 @@ namespace TempWebFormApp {
         protected global::System.Web.UI.WebControls.Button Employee1;
         
         /// <summary>
-        /// linkButton2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton linkButton2;
-        
-        /// <summary>
         /// AddRemarkUserControl1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TempWebFormApp.AddRemarkUserControl AddRemarkUserControl1;
+        protected global::EmployeeRemarkApp.UI.AddRemarkUserControl AddRemarkUserControl1;
     }
 }

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TempWebFormApp.Account
+namespace EmployeeRemarkApp.UI.Account
 {
 
 

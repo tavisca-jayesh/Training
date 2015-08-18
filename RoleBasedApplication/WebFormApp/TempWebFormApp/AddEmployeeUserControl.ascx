@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AddEmployeeUserControl.ascx.cs" Inherits="TempWebFormApp.AddEmployeeUserControl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AddEmployeeUserControl.ascx.cs" Inherits="EmployeeRemarkApp.UI.AddEmployeeUserControl" %>
 <style type="text/css">
     .auto-style2 {
         width: 181px;
@@ -21,7 +21,7 @@
             <asp:TextBox ID="TitleBox" runat="server"></asp:TextBox>
         </td>
         <td class="auto-style3">
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="TitleBox" ForeColor="Red" runat="server" ErrorMessage="Please Insert Title"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ValidationGroup="AddEmployee" ControlToValidate="TitleBox" ForeColor="Red" runat="server" ErrorMessage="Please Insert Title"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -30,7 +30,7 @@
             <asp:TextBox ID="FirstNameBox" runat="server"></asp:TextBox>
         </td>
         <td class="auto-style3">
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ControlToValidate="FirstNameBox" ForeColor="Red" runat="server" ErrorMessage="Please Insert First Name"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ValidationGroup="AddEmployee" ControlToValidate="FirstNameBox" ForeColor="Red" runat="server" ErrorMessage="Please Insert First Name"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -39,7 +39,7 @@
             <asp:TextBox ID="LastNameBox" runat="server"></asp:TextBox>
         </td>
         <td class="auto-style3">
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="LastNameBox" ForeColor="Red" runat="server" ErrorMessage="Please Insert Last Name"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ValidationGroup="AddEmployee" ControlToValidate="LastNameBox" ForeColor="Red" runat="server" ErrorMessage="Please Insert Last Name"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -48,7 +48,7 @@
             <asp:TextBox ID="EmailBox" runat="server"></asp:TextBox>
         </td>
         <td class="auto-style3">
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ControlToValidate="EmailBox" ForeColor="Red" runat="server" ErrorMessage="Please Insert Email Id"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" ValidationGroup="AddEmployee" ControlToValidate="EmailBox" ForeColor="Red" runat="server" ErrorMessage="Please Insert Email Id"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -57,13 +57,13 @@
             <asp:TextBox ID="PhoneBox" runat="server"></asp:TextBox>
         </td>
         <td class="auto-style3">
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ControlToValidate="PhoneBox" ForeColor="Red" runat="server" ErrorMessage="Please Insert Phone Number"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ValidationGroup="AddEmployee" ControlToValidate="PhoneBox" ForeColor="Red" runat="server" ErrorMessage="Please Insert Phone Number"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
         <td>&nbsp;</td>
         <td class="auto-style2">
-            <asp:ImageButton ImageUrl="Images/sub21.gif" ID="EmpSubmitButton" runat="server" Height="34px" Width="92px" OnClick="EmpSubmitButton_Click"/>  <!--OnClick="ImageButton1_Click"-->
+            <asp:ImageButton ImageUrl="Images/sub21.gif" ID="EmpSubmitButton" ValidationGroup="AddEmployee" runat="server" Height="34px" Width="92px" OnClick="EmpSubmitButton_Click"/>  <!--OnClick="AddRemarkButton_Click"-->
         </td>
         <td class="auto-style3">&nbsp;</td>
     </tr>

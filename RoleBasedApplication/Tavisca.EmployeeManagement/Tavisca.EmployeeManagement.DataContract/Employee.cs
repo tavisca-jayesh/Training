@@ -10,7 +10,7 @@ namespace Tavisca.EmployeeManagement.DataContract
     [DataContract]
     public class Employee
     {
-        public Employee() { }
+        //public Employee() { }
 
         [DataMember]
         public string Id { get; set; }

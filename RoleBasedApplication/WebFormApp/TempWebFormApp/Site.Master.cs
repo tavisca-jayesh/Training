@@ -6,7 +6,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace TempWebFormApp
+namespace EmployeeRemarkApp.UI
 {
     public partial class SiteMaster : MasterPage
     {
@@ -67,7 +67,7 @@ namespace TempWebFormApp
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

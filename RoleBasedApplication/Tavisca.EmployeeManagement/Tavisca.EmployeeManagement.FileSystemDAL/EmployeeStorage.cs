@@ -20,8 +20,6 @@ namespace Tavisca.EmployeeManagement.FileStorage
     {
         public Model.Employee Save(Model.Employee employee)
         {
-            //try
-            //{
             using (SqlConnection connection = new SqlConnection())
             {
                 //random employee ID
@@ -43,22 +41,11 @@ namespace Tavisca.EmployeeManagement.FileStorage
                 insertCommand.ExecuteNonQuery();
                 connection.Close();
             }
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    var rethrow = ExceptionPolicy.HandleException("data.policy", ex);
-            //    if (rethrow) throw;
-            //    return null;
-            //}
             return employee;
-
         }
 
         public Model.Remark AddRemark(string employeeId, Remark remark)
         {
-            //try
-            //{
             using (SqlConnection connection = new SqlConnection())
             {
                 connection.ConnectionString = "Data Source=TRAINING4;Initial Catalog=EmployeeRecord;User ID=sa;Password=test123!@#";
@@ -74,23 +61,13 @@ namespace Tavisca.EmployeeManagement.FileStorage
                     AddRemarkCommand.ExecuteNonQuery();
                 }
                 connection.Close();
-
             }
             return remark;
-            //}
-            //catch (Exception ex)
-            //{
-            //    var rethrow = ExceptionPolicy.HandleException("data.policy", ex);
-            //    if (rethrow) throw;
-            //    return null;
-            //}
         }
 
         public Model.Employee Authenticate(Model.LoginAuthentication employeeDetails)
         {
             Model.Employee employeeData = new Model.Employee();
-            //try
-            //{
             using (SqlConnection connection = new SqlConnection())
             {
                 connection.ConnectionString = "Data Source=TRAINING4;Initial Catalog=EmployeeRecord;User ID=sa;Password=test123!@#";
@@ -101,6 +78,7 @@ namespace Tavisca.EmployeeManagement.FileStorage
 
                 using (SqlDataReader reader = authCommanad.ExecuteReader())
                 {
+                    if (reader.HasRows == false) throw new System.Exception("Invalid Email");
                     while (reader.Read())
                     {
                         //TODO : remove extra params
@@ -114,22 +92,14 @@ namespace Tavisca.EmployeeManagement.FileStorage
                         employeeData.Password = reader[7].ToString();
                         employeeData.Role = reader[8].ToString();
                     }
+                    if (string.Compare(employeeDetails.Password, employeeData.Password) != 0) throw new System.Exception("Invalid Password");
                 }
             }
             return employeeData;
-            //}
-            //catch (Exception newex)
-            //{
-            //    var rethrow = ExceptionPolicy.HandleException("data.policy", newex);
-            //    if (rethrow) throw;
-            //    return null;
-            //}
         }
 
         public Model.Employee Get(string employeeId)
         {
-            //try
-            //{
             Model.Employee employee = new Model.Employee();
             SqlConnection connection = new SqlConnection();
             using (connection)
@@ -137,13 +107,11 @@ namespace Tavisca.EmployeeManagement.FileStorage
                 connection.ConnectionString = "Data Source=TRAINING4;Initial Catalog=EmployeeRecord;User ID=sa;Password=test123!@#";
                 connection.Open();
                 SqlCommand getCommand = new SqlCommand("GetEmp", connection);
-
                 getCommand.CommandType = CommandType.StoredProcedure;
                 getCommand.Parameters.Add(new SqlParameter("Id", employeeId));
 
                 using (SqlDataReader reader = getCommand.ExecuteReader())
                 {
-
                     while (reader.Read())
                     {
                         employee.Id = reader[0].ToString();
@@ -154,54 +122,39 @@ namespace Tavisca.EmployeeManagement.FileStorage
                         employee.Phone = reader[5].ToString();
                         employee.DOJ = Convert.ToDateTime(reader[6]);
                     }
-
                 }
             }
             connection.Close();
-
-            //Get Remark
             //displaying remarks of employee
-            List<Model.Remark> remarkList = new List<Model.Remark>();
-            Model.Remark remark = new Model.Remark();
-            using (SqlConnection connectionRemark = new SqlConnection())
-            {
-                connectionRemark.ConnectionString = "Data Source=TRAINING4;Initial Catalog=EmployeeRecord;User ID=sa;Password=test123!@#";
-                connectionRemark.Open();
-                SqlCommand command = new SqlCommand("getEmpRemark", connectionRemark);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.Add(new SqlParameter("@emp_id", employeeId));
-
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    remark.Text = reader[1].ToString();
-                    remark.CreateTimeStamp = Convert.ToDateTime(reader[2]);
-                    remarkList.Add(remark);
-                }
-                employee.Remarks = remarkList;
-                reader.Close();
-            }
-            connection.Close();
-            return employee;
-            //}
-
-            //catch (Exception ex)
+            //List<Model.Remark> remarkList = new List<Model.Remark>();
+            //Model.Remark remark = new Model.Remark();
+            //using (SqlConnection connectionRemark = new SqlConnection())
             //{
-            //    var rethrow = ExceptionPolicy.HandleException("data.policy", ex);
-            //    if (rethrow) throw;
-            //    return null;
+            //    connectionRemark.ConnectionString = "Data Source=TRAINING4;Initial Catalog=EmployeeRecord;User ID=sa;Password=test123!@#";
+            //    connectionRemark.Open();
+            //    SqlCommand command = new SqlCommand("getEmpRemark", connectionRemark);
+            //    command.CommandType = CommandType.StoredProcedure;
+            //    command.Parameters.Add(new SqlParameter("@emp_id", employeeId));
+            //    SqlDataReader reader = command.ExecuteReader();
+
+            //    while (reader.Read())
+            //    {
+            //        remark.Text = reader[1].ToString();
+            //        remark.CreateTimeStamp = Convert.ToDateTime(reader[2]);
+            //        remarkList.Add(remark);
+            //    }
+            //    employee.Remarks = remarkList;
+            //    reader.Close();
             //}
+            //connection.Close();
+            return employee;
         }
 
         public List<Model.Remark> GetRemarks(string employeeId, string pageSize, string pageNumber)
         {
-            //try
-            //{
             List<Model.Remark> remarkList = new List<Model.Remark>();
             using (SqlConnection connection = new SqlConnection())
             {
-
                 connection.ConnectionString = "Data Source=TRAINING4;Initial Catalog=EmployeeRecord;User ID=sa;Password=test123!@#";
                 connection.Open();
                 //setting remark count -- Jugaad
@@ -217,13 +170,12 @@ namespace Tavisca.EmployeeManagement.FileStorage
                 command.Parameters.Add(new SqlParameter("@emp_id", employeeId));
                 command.Parameters.Add(new SqlParameter("@row_num_start", (Int32.Parse(pageNumber) - 1) * Int32.Parse(pageSize) + 1));
                 command.Parameters.Add(new SqlParameter("@row_num_end", (Int32.Parse(pageNumber) * Int32.Parse(pageSize))));
-
-
                 SqlDataReader remarkReader = command.ExecuteReader();
+
                 while (remarkReader.Read())
                 {
                     Model.Remark remark = new Model.Remark();
-                    remark.Text = remarkReader[2].ToString();
+                    remark.Text = remarkReader[0].ToString();
                     remark.CreateTimeStamp = Convert.ToDateTime(remarkReader[1]);
                     remarkList.Add(remark);
                 }
@@ -235,19 +187,10 @@ namespace Tavisca.EmployeeManagement.FileStorage
                 //-------------------------------------
             }
             return remarkList;
-            //}
-            //catch (Exception ex)
-            //{
-            //    var rethrow = ExceptionPolicy.HandleException("data.policy", ex);
-            //    if (rethrow) throw;
-            //    return null;
-            //}
         }
 
         public List<Model.Employee> GetAll()
         {
-            //try
-            //{
             SqlConnection connection = new SqlConnection();
             List<Model.Employee> emplist = new List<Model.Employee>();
 
@@ -255,6 +198,7 @@ namespace Tavisca.EmployeeManagement.FileStorage
             connection.Open();
             SqlCommand command = new SqlCommand("getAllValues", connection);
             SqlDataReader reader = command.ExecuteReader();
+
             while (reader.Read())
             {
                 Model.Employee employee = new Model.Employee();
@@ -264,24 +208,17 @@ namespace Tavisca.EmployeeManagement.FileStorage
                 employee.LastName = reader[3].ToString();
                 employee.Email = reader[4].ToString();
                 employee.Phone = reader[5].ToString();
+                employee.DOJ = Convert.ToDateTime(reader[6]); //DateTime.UtcNow;
+                employee.Password = reader[7].ToString();
+                employee.Role = reader[8].ToString();
                 emplist.Add(employee);
             }
             connection.Close();
-
             return emplist;
-            //}
-            //catch (Exception ex)
-            //{
-            //    var rethrow = ExceptionPolicy.HandleException("data.policy", ex);
-            //    if (rethrow) throw;
-            //    return null;
-            //}
         }
 
         public bool changePassword(ChangePassword newCredentials)
         {
-            //try
-            //{
             using (SqlConnection connection = new SqlConnection())
             {
                 connection.ConnectionString = "Data Source=TRAINING4;Initial Catalog=EmployeeRecord;User ID=sa;Password=test123!@#";
@@ -298,18 +235,7 @@ namespace Tavisca.EmployeeManagement.FileStorage
                 connection.Close();
             }
             return true;
-            //}
-            //catch (Exception ex)
-            //{
-            //    var rethrow = ExceptionPolicy.HandleException("data.policy", ex);
-            //    if (rethrow) throw;
-            //    return 0;
-            //}
         }
 
-        private string GetFileName(string employeeId)
-        {
-            return string.Format(@"{0}\{1}.emp", Configurations.StoragePath, employeeId);
-        }
     }
 }

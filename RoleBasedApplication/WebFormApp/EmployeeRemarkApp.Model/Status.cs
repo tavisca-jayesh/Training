@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TempWebFormApp.Models
+namespace EmployeeRemarkApp.Model
 {
     [DataContract]
     public class Status

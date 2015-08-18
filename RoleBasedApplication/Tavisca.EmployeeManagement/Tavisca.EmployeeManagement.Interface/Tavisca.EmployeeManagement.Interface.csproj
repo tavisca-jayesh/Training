@@ -61,7 +61,7 @@
   <ItemGroup>
     <Compile Include="ICacheManager.cs" />
     <Compile Include="IChangePasswordManager.cs" />
-    <Compile Include="ILoginAuthenticateManager.cs" />
+    <Compile Include="ILoginAuthenticationManager.cs" />
     <Compile Include="IEmployeeStorage.cs" />
     <Compile Include="IEmployeeManagementManager.cs" />
     <Compile Include="IEmployeeManager.cs" />

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace TempWebFormApp
+namespace EmployeeRemarkApp.UI
 {
     public partial class MultiViewTest : System.Web.UI.Page,IButtonControl   
     {

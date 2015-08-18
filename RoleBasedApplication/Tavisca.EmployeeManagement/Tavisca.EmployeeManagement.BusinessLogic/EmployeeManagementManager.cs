@@ -34,11 +34,5 @@ namespace Tavisca.EmployeeManagement.BusinessLogic
             _storage.AddRemark(employeeId, remark);
             return remark;
         }
-
-        public Employee Authenticate(LoginAuthentication employeeDetails)
-        {
-             employeeDetails.Validate();
-            return _storage.Authenticate(employeeDetails);
-        }
     }
 }

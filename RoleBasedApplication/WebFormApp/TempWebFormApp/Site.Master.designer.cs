@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TempWebFormApp
+namespace EmployeeRemarkApp.UI
 {
 
 

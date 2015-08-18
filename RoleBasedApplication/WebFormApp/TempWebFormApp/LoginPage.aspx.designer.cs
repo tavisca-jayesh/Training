@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TempWebFormApp {
+namespace EmployeeRemarkApp.UI {
     
     
     public partial class LoginPage {
@@ -19,6 +19,6 @@ namespace TempWebFormApp {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TempWebFormApp.LoginUserControl LoginUserControl;
+        protected global::EmployeeRemarkApp.UI.LoginUserControl LoginUserControl;
     }
 }

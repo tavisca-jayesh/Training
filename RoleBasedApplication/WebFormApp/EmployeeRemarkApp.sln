@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempWebFormApp", "TempWebFormApp\TempWebFormApp.csproj", "{A618B8D0-001B-4093-AAAD-9F42323CE275}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeRemarkApp.UI", "TempWebFormApp\EmployeeRemarkApp.UI.csproj", "{A618B8D0-001B-4093-AAAD-9F42323CE275}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeRemarkApp.Model", "EmployeeRemarkApp.Model\EmployeeRemarkApp.Model.csproj", "{605E9061-F54C-40B3-8FCD-82927A4FFC8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{A618B8D0-001B-4093-AAAD-9F42323CE275}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A618B8D0-001B-4093-AAAD-9F42323CE275}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A618B8D0-001B-4093-AAAD-9F42323CE275}.Release|Any CPU.Build.0 = Release|Any CPU
+		{605E9061-F54C-40B3-8FCD-82927A4FFC8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{605E9061-F54C-40B3-8FCD-82927A4FFC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{605E9061-F54C-40B3-8FCD-82927A4FFC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{605E9061-F54C-40B3-8FCD-82927A4FFC8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

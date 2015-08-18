@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OpenAuthProviders.ascx.cs" Inherits="TempWebFormApp.Account.OpenAuthProviders" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OpenAuthProviders.ascx.cs" Inherits="EmployeeRemarkApp.UI.Account.OpenAuthProviders" %>
 <%@ Import Namespace="Microsoft.AspNet.Membership.OpenAuth" %>
 <fieldset class="open-auth-providers">
     <legend>Log in using another service</legend>

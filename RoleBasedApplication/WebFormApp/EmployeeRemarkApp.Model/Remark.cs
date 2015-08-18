@@ -5,7 +5,7 @@ using System.Web;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace TempWebFormApp.Models
+namespace EmployeeRemarkApp.Model
 {
     [DataContract]
     public class Remark

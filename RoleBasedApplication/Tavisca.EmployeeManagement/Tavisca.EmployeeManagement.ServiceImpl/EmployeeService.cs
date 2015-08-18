@@ -57,7 +57,6 @@ namespace Tavisca.EmployeeManagement.ServiceImpl
                 //if (rethrow) throw;
                 return response;
             }
-
         }
 
         public DataContract.RemarkListResponse GetRemarks(string employeeId, string pageSize, string pageNumber)

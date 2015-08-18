@@ -33,8 +33,6 @@ namespace Tavisca.EmployeeManagement.ServiceImpl
             {
                 response.ResponseStatus.StatusCode = "500";
                 response.ResponseStatus.Message = ex.Message;
-                //var rethrow = ExceptionPolicy.HandleException("service.policy", ex);
-                //if (rethrow) throw;
                 return response;
             }
         }
@@ -53,31 +51,8 @@ namespace Tavisca.EmployeeManagement.ServiceImpl
             {
                 response.ResponseStatus.StatusCode = "500";
                 response.ResponseStatus.Message = ex.Message;
-                //var rethrow = ExceptionPolicy.HandleException("service.policy", ex);
                 return response;
             }
         }
-
-        public DataContract.EmployeeResponse Authenticate(DataContract.LoginAuthentication employeeDetails)
-        {
-            DataContract.EmployeeResponse response = new DataContract.EmployeeResponse();
-            try
-            {
-                var result = _manager.Authenticate(employeeDetails.ToDomainModel());
-                if (result == null) return null;
-                Model.Employee emp = new Model.Employee();
-                emp = employeeDetails.ToEmployee();
-                response.ResponseEmployee=emp.ToDataContract();
-                return response;
-            }
-            catch (Exception ex)
-            {
-                response.ResponseStatus.StatusCode = "500";
-                response.ResponseStatus.Message = ex.Message;
-                //var rethrow = ExceptionPolicy.HandleException("service.policy", ex);
-                return response;
-            }
-        }
-
     }
 }

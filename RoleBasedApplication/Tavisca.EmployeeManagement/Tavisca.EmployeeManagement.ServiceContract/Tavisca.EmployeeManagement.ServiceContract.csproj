@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IChangePasswordService.cs" />
-    <Compile Include="IEmployeeAuthenticationService.cs" />
+    <Compile Include="ILoginAuthenticationService.cs" />
     <Compile Include="IEmployeeManagementService.cs" />
     <Compile Include="IEmployeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

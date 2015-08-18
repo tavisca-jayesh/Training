@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TempWebFormApp.Account {
+namespace EmployeeRemarkApp.UI.Account {
     
     
     public partial class Login {
@@ -28,6 +28,6 @@ namespace TempWebFormApp.Account {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::TempWebFormApp.Account.OpenAuthProviders OpenAuthLogin;
+        protected global::EmployeeRemarkApp.UI.Account.OpenAuthProviders OpenAuthLogin;
     }
 }

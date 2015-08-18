@@ -5,12 +5,16 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TempWebFormApp.Models
+namespace EmployeeRemarkApp.Model
 {
     [DataContract]
-    public class EmployeeResponse : Result
+    public class Result
     {
         [DataMember]
-        public Employee ResponseEmployee { get; set; }
+        public Status ResponseStatus { get; set; }
+        public Result()
+        {
+            this.ResponseStatus = Status.Success;
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace Tavisca.EmployeeManagement.ServiceImpl
             try
             {
                 var result = _manager.ChangingPassword(newCredentials.ToDomainModel());
-                if (result == null) throw new ArgumentException();
+                if (result == false) throw new ArgumentException();
                 response.ResponseChangePassword = result;
                 return response;
             }

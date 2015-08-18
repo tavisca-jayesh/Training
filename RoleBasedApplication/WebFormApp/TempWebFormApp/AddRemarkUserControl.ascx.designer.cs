@@ -7,28 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TempWebFormApp {
+namespace EmployeeRemarkApp.UI {
     
     
     public partial class AddRemarkUserControl {
         
         /// <summary>
-        /// EmployeeIdText control.
+        /// EmployeeList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EmployeeIdText;
-        
-        /// <summary>
-        /// RequiredEmployeeId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredEmployeeId;
+        protected global::System.Web.UI.WebControls.DropDownList EmployeeList;
         
         /// <summary>
         /// RemarkText control.
@@ -40,12 +31,12 @@ namespace TempWebFormApp {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea RemarkText;
         
         /// <summary>
-        /// ImageButton1 control.
+        /// AddRemarkButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        protected global::System.Web.UI.WebControls.ImageButton AddRemarkButton;
     }
 }

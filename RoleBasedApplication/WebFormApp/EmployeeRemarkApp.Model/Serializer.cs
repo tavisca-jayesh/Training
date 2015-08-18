@@ -7,9 +7,9 @@ using Newtonsoft.Json;
 using System.Runtime.Serialization.Json;
 using System.IO;
 
-namespace TempWebFormApp.Models
+namespace EmployeeRemarkApp.Model
 {
-    internal static class Serializer
+    public static class Serializer
     {
         internal static string Serialize<T>(T data)
         {
@@ -23,7 +23,7 @@ namespace TempWebFormApp.Models
             }
         }
 
-        internal static T Deserialize<T>(string data)
+        public static T Deserialize<T>(string data)
         {
             using (var ms = new MemoryStream())
             {

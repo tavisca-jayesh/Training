@@ -55,7 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChangePasswordManager.cs" />
-    <Compile Include="LoginAuthenticateManager.cs" />
+    <Compile Include="LoginAuthenticationManager.cs" />
     <Compile Include="EmployeeManagementManager.cs" />
     <Compile Include="EmployeeManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

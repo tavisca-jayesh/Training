@@ -6,7 +6,7 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Text;
 
-namespace TempWebFormApp.Models
+namespace EmployeeRemarkApp.Model
 {
     public class HttpClient
     {

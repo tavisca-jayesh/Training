@@ -6,7 +6,7 @@ using System.Web.UI.WebControls;
 
 using Microsoft.AspNet.Membership.OpenAuth;
 
-namespace TempWebFormApp.Account
+namespace EmployeeRemarkApp.UI.Account
 {
     public partial class Manage : System.Web.UI.Page
     {
