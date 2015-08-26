@@ -26,5 +26,11 @@
             <asp:ImageButton ID="AddRemarkButton" runat="server" Height="34px" ValidationGroup="AddRemark" ImageUrl="Images/sub21.gif" Width="92px" OnClick="AddRemarkButton_Click" />
         </td>
     </tr>
+    <tr>
+        <td>
+            <asp:Label ID="Success" runat="server" Text="Added Successfully" Visible="false"></asp:Label>
+            <asp:Label ID="Failure" runat="server" Text="Failure Something went wrong" Visible="false"></asp:Label>
+        </td>
+    </tr>
 </table>
 

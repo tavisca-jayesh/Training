@@ -28,7 +28,9 @@
             </td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
+            <td>
+                <asp:Label ID="Failure" runat="server" Text="Authentication Failed" Visible="false"></asp:Label>
+            </td>
             <td>
                 <asp:CheckBox ID="RememberMe" runat="server"/> Remember Me
             </td>

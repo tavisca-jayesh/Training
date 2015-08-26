@@ -30,7 +30,7 @@ namespace EmployeeRemarkApp.UI
        
         public void EmployeeView(object sender, EventArgs e)
         {
-            MultiView1.ActiveViewIndex -= 1;   
+            MultiView1.ActiveViewIndex -= 1;
         }
 
         public void RemarkView(object sender, EventArgs e)

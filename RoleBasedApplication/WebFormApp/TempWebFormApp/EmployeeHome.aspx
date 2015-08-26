@@ -74,6 +74,14 @@
                                     <asp:Button ID="CancelPushButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="Success" runat="server" Text="Password changed successfully" Visible="false"></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:Label ID="Failure" runat="server" Text="Error" Visible="false"></asp:Label>
+                                </td>
+                            </tr>
                         </table>
                     </td>
                 </tr>

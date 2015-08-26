@@ -65,7 +65,10 @@
         <td class="auto-style2">
             <asp:ImageButton ImageUrl="Images/sub21.gif" ID="EmpSubmitButton" ValidationGroup="AddEmployee" runat="server" Height="34px" Width="92px" OnClick="EmpSubmitButton_Click"/>  <!--OnClick="AddRemarkButton_Click"-->
         </td>
-        <td class="auto-style3">&nbsp;</td>
+        <td class="auto-style3">
+            <asp:Label ID="Success" runat="server" Text="Employee Added Successfully" Visible="false"></asp:Label>
+            <asp:Label ID="Failure" runat="server" Text="Failure Something went wrong" Visible="false"></asp:Label>
+        </td>
     </tr>
 </table>
 

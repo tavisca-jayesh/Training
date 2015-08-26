@@ -63,11 +63,13 @@ namespace EmployeeRemarkApp.UI
                 Response.Cookies["Id"].Value = response.ResponseEmployee.Id.ToString().Trim();
             }
             else
-            { 
+            {
+                Failure.Visible = true;
                 //show error
             }
             if (response.ResponseStatus.StatusCode.Equals("401") || response.ResponseEmployee == null)
             {
+                Failure.Visible = true;
                 Response.Write("Invalid User Name or Password");
             }
             else
@@ -78,7 +80,6 @@ namespace EmployeeRemarkApp.UI
                 }
                 Response.Redirect("http://localhost:62581/EmployeeHome.aspx");
             }
-            Response.Redirect("HRHome.aspx");
         }
     }
 }

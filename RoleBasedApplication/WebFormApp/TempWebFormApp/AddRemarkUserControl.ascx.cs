@@ -48,10 +48,17 @@ namespace EmployeeRemarkApp.UI
             var response = add.AddRemark(remark, EmployeeList.SelectedValue.ToString());
             RemarkText.InnerText = null;
             RemarkText.InnerHtml = null;
-            EmployeeList.SelectedIndex = -1;
 
-            EmpView.EmployeeView(sender, e);
-
+            if (response.ResponseStatus.StatusCode == "200")
+            {
+                Success.Visible = true;
+                EmployeeList.SelectedIndex = -1;
+                EmpView.EmployeeView(sender, e);
+            }
+            else
+            {
+                Failure.Visible = true;
+            }
         }
 
         protected void EmployeeList_SelectedIndexChanged(object sender, EventArgs e)

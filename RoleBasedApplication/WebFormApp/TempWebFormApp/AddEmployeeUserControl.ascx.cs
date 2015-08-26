@@ -47,11 +47,14 @@ namespace EmployeeRemarkApp.UI
                 EmailBox.Text = null;
                 PhoneBox.Text = null;
 
+                Success.Visible = true;
+
                 HRHome EmployeeView = new HRHome();
                 EmployeeView.EmployeeView(sender, e);
             }
             else
             {
+                Failure.Visible = true;
                 //error respose
             }
         }
